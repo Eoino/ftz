@@ -10,39 +10,34 @@ class Item
 private:
     string name;
     int value;
-    int weight;
+    int xpos;
+    int ypos;
 public:
-    Item(string name, int value, int weight);
+    Item(string name, int value);
+    Item(string name, int value, int xpos, int ypos);
+    int getValue();
+    void setPos(int xpos, int ypos);
+    bool checkPos(int xpos, int ypos);
 };
 
-// TODO implement
-class IEquipable
-{
-private:
-    bool equipped;
-    int durability;
-public:
-    virtual int get_value() = 0; // durability * value
-};
-
-class Weapon: public Item, public IEquipable
+class Weapon: public Item
 {
 private:
     int damage;
 public:
-    Weapon(string name, int value, int weight, int damage);
-    // Get damage method
+    Weapon(string name, int value, int damage);
+    Weapon(string name, int value, int xpos, int ypos, int damage);
+    int getDamage();
 };
 
-class Armour: public Item, public IEquipable
+class Armour: public Item
 {
 private:
     int protection;
 public:
-    Armour(string name, int value, int weight, int protection);
-
+    Armour(string name, int value, int protection);
+    Armour(string name, int value, int xpos, int ypos, int protection);
+    int getProtection();
 };
-
-// TODO Utility class with different variables or bandage class?
 
 #endif // ITEM_H

@@ -20,8 +20,8 @@ private:
     int xlen;
     int ylen;
     Tile ***map;
-    vector<Alien> aliens;
-    vector<Item> items;
+    vector<Alien*> aliens;
+    vector<Item*> items;
     void importMap(string tilemap);
     int readNum(string line);
 public:

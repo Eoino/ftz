@@ -48,7 +48,30 @@ void Ship::importMap(string tilemap)
     int count = 0;
     for(int i = 0; i < xlen; i++)
         for(int j = 0; j < ylen; j++)
-            map[i][j] = new Tile(tilemap.at(count++));
+        {
+            char tile = tilemap.at(count++);
+            if(tile == 'S')
+            {
+                /* Spawn weapon in this room */
+                Weapon *weapon = new Weapon("Sword", 25, i, j, 15);
+                items.push_back(weapon);
+                tile = 'R';
+            }
+            else if(tile == 'T')
+            {
+                /* Spawn armour in this room */
+                Armour *armour = new Armour("Shirt", 5, i, j, 1);
+                items.push_back(armour);
+                tile = 'R';
+            }
+            else if(tile == 'M')
+            {
+                /* Spawn medkit in this room */
+                // TODO
+                tile = 'R';
+            }
+            map[i][j] = new Tile(tile);
+        }
 }
 
 int Ship::readNum(string line)

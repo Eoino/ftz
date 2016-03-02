@@ -1,0 +1,26 @@
+A: 
+B: 
+C: Command Room
+D: 
+E: Engine Room
+F: 
+G: 
+H: 
+I: 
+J: 
+K: 
+L: 
+M: 
+N: 
+O: 
+P: 
+Q: 
+R: Room
+S: Sword
+T: Shirt
+U: 
+V: 
+W: Wall
+X: 
+Y: 
+Z: 

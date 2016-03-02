@@ -1,0 +1,3 @@
+Weapon-Damage-Value
+
+Sword-15-25

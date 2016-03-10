@@ -1,12 +1,14 @@
 #include "Character.h"
 
-Character::Character(string name, int maxHealth, int money)
+Character::Character(string name, int maxHealth, int money, int xpos, int ypos)
 {
     this->name = name;
     this->maxHealth = maxHealth;
     this->money = money;
+    this->xpos = xpos;
+    this->ypos = ypos;
     /* Set health to maximum */
-    this->health = health;
+    this->health = maxHealth;
 }
 
 void Character::move(char direction)
@@ -19,21 +21,10 @@ string Character::getName()
     return this->name;
 }
 
-Human::Human(string name)
-    :Character(name, 100, 25)
+Human::Human(string name, int maxHealth, int money, int xpos, int ypos)
+    :Character(name, maxHealth, money, xpos, ypos)
 {
-    this->maxWeight = 30;
-}
 
-Human::Human(string name, int maxWeight, int maxHealth, int money)
-    :Character(name, maxHealth, money)
-{
-    this->maxWeight = maxWeight;
-}
-
-void Human::attack(char direction)
-{
-    // TODO
 }
 
 void Human::loot()
@@ -41,13 +32,8 @@ void Human::loot()
     // TODO
 }
 
-Alien::Alien(string name, int maxHealth, int money)
-    :Character(name, maxHealth, money)
-{
-    // TODO
-}
-
-void Alien::attack(char direction)
+Alien::Alien(int xpos, int ypos)
+    :Character(ALIEN_NAME, ALIEN_HEALTH, ALIEN_MONEY, xpos, ypos)
 {
     // TODO
 }

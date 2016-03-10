@@ -50,7 +50,14 @@ void Ship::importMap(string tilemap)
         for(int j = 0; j < ylen; j++)
         {
             char tile = tilemap.at(count++);
-            if(tile == 'S')
+            if(tile == 'A')
+            {
+                /* Spawn enemy in this room*/
+                Alien *alien = new Alien(i, j);
+                aliens.push_back(alien);
+                tile = 'R';
+            }
+            else if(tile == 'S')
             {
                 /* Spawn weapon in this room */
                 Weapon *weapon = new Weapon("Sword", 25, i, j, 15);

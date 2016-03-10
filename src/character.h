@@ -4,6 +4,10 @@
 #include <string>
 #include "item.h"
 
+#define ALIEN_NAME "Boo"
+#define ALIEN_HEALTH 100
+#define ALIEN_MONEY 15
+
 using namespace std;
 
 class Character
@@ -20,37 +24,31 @@ private:
 
     /* Inventory */
     int money;
-    Item* inv;
 
-    /* Function - Attack character standing in tile denoted by direction */
-    virtual void attack(char direction) = 0;
-public:
-    Character(string name, int maxHealth, int money);
     void move(char direction);
+    void attack(char direction);
+public:
+    Character(string name, int maxHealth, int money, int xpos, int ypos);
+    void heal(int heal);
     string getName();
 };
-
 
 class Human: public Character
 {
 private:
-    int maxWeight;
-    void attack(char direction);
+    Weapon *weapon;
+    Armour *armour;
 public:
-    Human(string name);
-    Human(string name, int maxWeight, int maxHealth, int money);
+    Human(string name, int maxHealth, int money, int xpos, int ypos);
     void loot();
+    void action(char keyDirection); // Enum for directions?
 };
-
 
 class Alien: public Character
 {
-private:
-    void attack(char direction);
 public:
-    Alien(string name, int maxHealth, int money);
+    Alien(int xpos, int ypos);
     void scout();
 };
-
 
 #endif // CHARACTER_H

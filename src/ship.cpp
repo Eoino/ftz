@@ -86,3 +86,13 @@ int Ship::readNum(string line)
     int pos = line.find(":") + 1;
     return atoi((line.substr(pos, line.size())).c_str());
 }
+
+vector<Alien *> Ship::getAliens()
+{
+    return aliens;
+}
+
+Tile ***Ship::getMap()
+{
+    return map;
+}

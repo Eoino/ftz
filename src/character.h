@@ -3,6 +3,7 @@
 
 #include <string>
 #include "item.h"
+#include "tile.h"
 
 #define ALIEN_NAME "Boo"
 #define ALIEN_HEALTH 100
@@ -14,26 +15,22 @@ using namespace std;
 class Character
 {
 private:
-    /* Information */
     string name;
     int maxHealth;
-
-    /* Position on map grid */
-    int xpos;
-    int ypos;
-
-    /* Inventory */
     int money;
-
     virtual void attack(Character *target) = 0;
 protected:
     int health;
+    int xpos;
+    int ypos;
 public:
     Character(string name, int maxHealth, int money, int xpos, int ypos);
     void move(int xpos, int ypos);
     virtual void defend(int damage) = 0;
     void heal(int heal);
     string getName();
+    int* getPos();
+    int getHealth();
 };
 
 class Human: public Character
@@ -57,7 +54,7 @@ private:
 public:
     Alien(int xpos, int ypos);
     void defend(int damage);
-    void scout();
+    void scout(Tile ***map, Human *human);
 };
 
 #endif // CHARACTER_H

@@ -27,6 +27,8 @@ private:
 public:
     Ship(string name);
     ~Ship();
+    vector<Alien*> getAliens();
+    Tile*** getMap();
 };
 
 #endif // SHIP_H

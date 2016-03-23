@@ -7,6 +7,7 @@
 #define ALIEN_NAME "Boo"
 #define ALIEN_HEALTH 100
 #define ALIEN_MONEY 15
+#define ALIEN_STRENGTH 10
 
 using namespace std;
 
@@ -16,7 +17,6 @@ private:
     /* Information */
     string name;
     int maxHealth;
-    int health;
 
     /* Position on map grid */
     int xpos;
@@ -25,10 +25,13 @@ private:
     /* Inventory */
     int money;
 
-    void move(char direction);
-    void attack(char direction);
+    virtual void attack(Character *target) = 0;
+protected:
+    int health;
 public:
     Character(string name, int maxHealth, int money, int xpos, int ypos);
+    void move(int xpos, int ypos);
+    virtual void defend(int damage) = 0;
     void heal(int heal);
     string getName();
 };
@@ -38,16 +41,22 @@ class Human: public Character
 private:
     Weapon *weapon;
     Armour *armour;
+    void attack(Character *target);
 public:
     Human(string name, int maxHealth, int money, int xpos, int ypos);
-    void loot();
-    void action(char keyDirection); // Enum for directions?
+    void defend(int damage);
+    void loot(Item *item);
+    void action(char keyDirection);
 };
 
 class Alien: public Character
 {
+private:
+    int strength;
+    void attack(Character *target);
 public:
     Alien(int xpos, int ypos);
+    void defend(int damage);
     void scout();
 };
 

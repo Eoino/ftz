@@ -9,9 +9,10 @@ class FTZ
 private:
     Human *player;
     Ship *ship;
-    void simTurn();
 public:
     FTZ();
+    ~FTZ();
+    bool simTurn();
 };
 
 #endif // FTZ_H

@@ -5,13 +5,21 @@ FTZ::FTZ()
 
 }
 
-/* Executed after player turn */
-void FTZ::simTurn()
+FTZ::~FTZ()
 {
+
+}
+
+/* Executed after player turn */
+bool FTZ::simTurn()
+{
+    bool alive = true;
     vector<Alien*> aliens = ship->getAliens();
     Tile ***map = ship->getMap();
 
     /* Check victory conditions */
+    if(aliens.size() == 0)
+        alive = false;
 
     /* Check alien health */
     for(int i = 0; i < aliens.size(); i++)
@@ -29,6 +37,8 @@ void FTZ::simTurn()
     }
 
     /* Check player health */
-    // Check health and end game
-    // if zero or less
+    if(player->getHealth() <= 0)
+        alive = false;
+
+    return alive;
 }

@@ -17,14 +17,16 @@ int main(int argc, char *argv[])
     selectShip(ftz);
 
     /* Game Loop */
-    bool stay = true;
-    while(stay)
+    bool alive = true;
+    while(alive)
     {
         // TODO
         // Process user input
-        // Update game state / ftz.simTurn();
+
+        /* Update game state */
+        alive = ftz->simTurn();
+
         // Update GUI
-        break;
     }
 
     return 0;

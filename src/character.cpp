@@ -45,7 +45,8 @@ int Character::getHealth()
 Human::Human(string name, int maxHealth, int money, int xpos, int ypos)
     :Character(name, maxHealth, money, xpos, ypos)
 {
-
+    weapon = nullptr;
+    armour = nullptr;
 }
 
 void Human::attack(Character *target)
@@ -56,7 +57,10 @@ void Human::attack(Character *target)
 
 void Human::defend(int damage)
 {
-    health -= damage - armour->getProtection();
+    if(armour == nullptr)
+        health -= damage;
+    else
+        health -= damage - armour->getProtection();
 }
 
 void Human::loot(Item *item)

@@ -9,7 +9,8 @@ FTZ: Faster Than Zork is a top-down rouguelike role-playing game, developed usin
 - [X] Map generation
 - [X] Item generation
 - [X] Alien generation
-- [ ] Character movement
-- [ ] Character attack
-- [ ] Alien AI
-
+- [X] Character movement
+- [X] Character attack
+- [X] Alien AI
+- [ ] Keyboard Input
+- [ ] GUI

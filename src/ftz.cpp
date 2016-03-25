@@ -26,14 +26,14 @@ bool FTZ::simTurn()
     {
         if(aliens[i]->getHealth() <= 0)
         {
-            delete aliens[i]; // UNTESTED
+            delete aliens[i];
         }
     }
 
     /* Set aliens to scout */
     for(int i = 0; i < aliens.size(); i++)
     {
-        aliens[i]->scout(map, player); // UNTESTED
+        aliens[i]->scout(map, player);
     }
 
     /* Check player health */

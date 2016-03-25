@@ -42,3 +42,43 @@ bool FTZ::simTurn()
 
     return alive;
 }
+
+void FTZ::addPlayer(string name)
+{
+   Human *player = new Human(name, 100, 10, 0, 0);
+   this->player = player;
+}
+
+void FTZ::addShip(string name)
+{
+    Ship *ship = new Ship(name);
+    this->ship = ship;
+}
+
+void FTZ::spawnPlayer()
+{
+    random_device rd;
+    mt19937 mersenne(rd());
+
+    Tile ***map = ship->getMap();
+
+    /* Get map length and height */
+    int *size = ship->getSize();
+    int xlen = size[0];
+    int ylen = size[1];
+
+    /* Cleanup */
+    delete [] size;
+
+    bool spawned = false;
+    while(!spawned)
+    {
+        int xpos = (mersenne() % xlen);
+        int ypos = (mersenne() % ylen);
+        if(map[xpos][ypos]->isEnterable())
+        {
+            //player->setPos(xpos, ypos);
+            spawned = true;
+        }
+    }
+}

@@ -96,3 +96,11 @@ Tile ***Ship::getMap()
 {
     return map;
 }
+
+int* Ship::getSize()
+{
+    int *size = new int[2];
+    size[0] = xlen;
+    size[1] = ylen;
+    return size;
+}

@@ -42,6 +42,12 @@ int Character::getHealth()
     return health;
 }
 
+void Character::setPos(int xpos, int ypos)
+{
+    this->xpos = xpos;
+    this->ypos = ypos;
+}
+
 Human::Human(string name, int maxHealth, int money, int xpos, int ypos)
     :Character(name, maxHealth, money, xpos, ypos)
 {

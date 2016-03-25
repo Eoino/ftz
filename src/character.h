@@ -31,6 +31,7 @@ public:
     string getName();
     int* getPos();
     int getHealth();
+    void setPos(int xpos, int ypos);
 };
 
 class Human: public Character

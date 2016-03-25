@@ -29,6 +29,7 @@ public:
     ~Ship();
     vector<Alien*> getAliens();
     Tile*** getMap();
+    int* getSize();
 };
 
 #endif // SHIP_H

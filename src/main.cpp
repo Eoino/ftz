@@ -16,6 +16,9 @@ int main(int argc, char *argv[])
     /* Display ship selection */
     selectShip(ftz);
 
+    /* Spawn player */
+    ftz->spawnPlayer();
+
     /* Game Loop */
     bool alive = true;
     while(alive)
@@ -37,6 +40,7 @@ void createCharacter(FTZ *ftz)
     // TODO
     // Display UI and pass input details to
     // character creation method in ftz
+    // ftz->addPlayer(name);
 }
 
 void selectShip(FTZ *ftz)
@@ -44,4 +48,5 @@ void selectShip(FTZ *ftz)
     // TODO
     // Display UI and pass selected
     // ship to import method in ftz
+    // ftz->addShip(name);
 }

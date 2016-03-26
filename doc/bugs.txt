@@ -1,0 +1,4 @@
+- Player spawn location does not appear to be fully random, at least during debug in Qt
+- Aliens are able to attack diagonally
+- Aliens may stack on top of each other due to pathfinding not taking into account the position of entitys besides the player
+

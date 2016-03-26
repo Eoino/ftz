@@ -77,7 +77,7 @@ void FTZ::spawnPlayer()
         int ypos = (mersenne() % ylen);
         if(map[xpos][ypos]->isEnterable())
         {
-            //player->setPos(xpos, ypos);
+            player->setPos(xpos, ypos);
             spawned = true;
         }
     }

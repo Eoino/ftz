@@ -2,6 +2,7 @@
 #define CHARACTER_H
 
 #include <string>
+
 #include "item.h"
 #include "tile.h"
 

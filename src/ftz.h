@@ -18,6 +18,8 @@ public:
     void addPlayer(string name);
     void addShip(string name);
     void spawnPlayer();
+    Human* getHuman();
+    Ship* getShip();
 };
 
 #endif // FTZ_H

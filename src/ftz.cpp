@@ -82,3 +82,13 @@ void FTZ::spawnPlayer()
         }
     }
 }
+
+Human* FTZ::getHuman()
+{
+    return player;
+}
+
+Ship* FTZ::getShip()
+{
+    return ship;
+}

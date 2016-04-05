@@ -14,6 +14,11 @@ Item::Item(string name, int value, int xpos, int ypos)
     this->ypos = ypos;
 }
 
+Item::~Item()
+{
+
+}
+
 int Item::getValue()
 {
     return this->value;
@@ -50,6 +55,11 @@ Weapon::Weapon(string name, int value, int xpos, int ypos, int damage)
     this->damage = damage;
 }
 
+Weapon::~Weapon()
+{
+
+}
+
 int Weapon::getDamage()
 {
     return this->damage;
@@ -65,6 +75,11 @@ Armour::Armour(string name, int value, int xpos, int ypos, int protection)
     :Item(name, value, xpos, ypos)
 {
     this->protection = protection;
+}
+
+Armour::~Armour()
+{
+
 }
 
 int Armour::getProtection()

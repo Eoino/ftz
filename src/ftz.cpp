@@ -27,7 +27,7 @@ bool FTZ::simTurn()
     {
         if(aliens[i]->getHealth() <= 0)
         {
-            delete aliens[i];
+            ship->deleteAlien(i);
         }
     }
 

@@ -33,6 +33,7 @@ public:
     Alien* getAlien(int xpos, int ypos);
     bool checkPos(int xpos, int ypos);
     Item* getItem(int xpos, int ypos);
+    void deleteAlien(int pos);
 };
 
 #endif // SHIP_H

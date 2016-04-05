@@ -182,3 +182,10 @@ Item *Ship::getItem(int xpos, int ypos)
     }
     return item;
 }
+
+/* Delete alien at specified position in vector */
+void Ship::deleteAlien(int pos)
+{
+    delete aliens[pos];
+    aliens.erase(aliens.begin() + pos);
+}

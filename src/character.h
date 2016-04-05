@@ -30,7 +30,7 @@ protected:
     int ypos;
 public:
     Character(string name, int maxHealth, int money, int xpos, int ypos);
-    virtual ~Character();
+    ~Character();
     void move(int xpos, int ypos);
     virtual void defend(int damage) = 0;
     void heal(int heal);
@@ -48,7 +48,7 @@ private:
     void attack(Character *target);
 public:
     Human(string name, int maxHealth, int money, int xpos, int ypos);
-    virtual ~Human();
+    ~Human();
     void defend(int damage);
     void loot(Item *item);
     void action(Alien *alien);

@@ -15,6 +15,7 @@ private:
 public:
     Item(string name, int value);
     Item(string name, int value, int xpos, int ypos);
+    ~Item();
     int getValue();
     void setPos(int xpos, int ypos);
     bool checkPos(int xpos, int ypos);
@@ -28,6 +29,7 @@ private:
 public:
     Weapon(string name, int value, int damage);
     Weapon(string name, int value, int xpos, int ypos, int damage);
+    ~Weapon();
     int getDamage();
 };
 
@@ -38,6 +40,7 @@ private:
 public:
     Armour(string name, int value, int protection);
     Armour(string name, int value, int xpos, int ypos, int protection);
+    ~Armour();
     int getProtection();
 };
 

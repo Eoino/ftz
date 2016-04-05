@@ -33,6 +33,11 @@ bool Item::checkPos(int xpos, int ypos)
     return false;
 }
 
+string Item::getName()
+{
+    return name;
+}
+
 Weapon::Weapon(string name, int value, int damage)
     :Item(name, value)
 {

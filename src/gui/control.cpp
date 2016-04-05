@@ -29,9 +29,14 @@ void Control::handleInput(FTZ *ftz)
             int xpos = pos[0];
             int ypos = pos[1];
 
+            /* Loot action */
             if(key == 'a')
             {
-                // loot item
+                Item *item = ftz->getShip()->getItem(xpos, ypos);
+                if(item->getName() == "Bandage")
+                    ftz->getHuman()->heal(100);
+                else
+                    ftz->getHuman()->setWeapon((Weapon*)item);
             }
             else
             {

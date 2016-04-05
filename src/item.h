@@ -18,6 +18,7 @@ public:
     int getValue();
     void setPos(int xpos, int ypos);
     bool checkPos(int xpos, int ypos);
+    string getName();
 };
 
 class Weapon: public Item

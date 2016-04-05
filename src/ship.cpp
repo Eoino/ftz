@@ -167,3 +167,18 @@ bool Ship::checkPos(int xpos, int ypos)
     }
     return exists;
 }
+
+Item *Ship::getItem(int xpos, int ypos)
+{
+    Item *item = nullptr;
+    bool found = false;
+    for(int i = 0; i < items.size() && !found; i++)
+    {
+        if(items[i]->checkPos(xpos, ypos))
+        {
+            item = items[i];
+            found = true;
+        }
+    }
+    return item;
+}

@@ -93,6 +93,18 @@ void Human::action(Alien *alien)
     attack(alien);
 }
 
+void Human::setWeapon(Weapon *weapon)
+{
+    delete this->weapon;
+    this->weapon = weapon;
+}
+
+void Human::setArmour(Armour *armour)
+{
+    delete this->armour;
+    this->armour = armour;
+}
+
 Alien::Alien(int xpos, int ypos)
     :Character(ALIEN_NAME, ALIEN_HEALTH, ALIEN_MONEY, xpos, ypos)
 {

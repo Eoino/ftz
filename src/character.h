@@ -52,6 +52,8 @@ public:
     void defend(int damage);
     void loot(Item *item);
     void action(Alien *alien);
+    void setWeapon(Weapon *weapon);
+    void setArmour(Armour *armour);
 };
 
 class Alien: public Character

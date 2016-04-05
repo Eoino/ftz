@@ -30,6 +30,8 @@ public:
     vector<Alien*> getAliens();
     Tile*** getMap();
     int* getSize();
+    Alien* getAlien(int xpos, int ypos);
+    bool checkPos(int xpos, int ypos);
 };
 
 #endif // SHIP_H

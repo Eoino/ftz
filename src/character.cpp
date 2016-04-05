@@ -68,8 +68,10 @@ Human::~Human()
 
 void Human::attack(Character *target)
 {
-    int damage = weapon->getDamage();
-    target->defend(damage);
+    if(weapon ==  nullptr)
+        target->defend(1);
+    else
+        target->defend(weapon->getDamage());
 }
 
 void Human::defend(int damage)
@@ -86,9 +88,9 @@ void Human::loot(Item *item)
     // TODO
 }
 
-void Human::action(char keyDirection)
+void Human::action(Alien *alien)
 {
-    // TODO
+    attack(alien);
 }
 
 Alien::Alien(int xpos, int ypos)

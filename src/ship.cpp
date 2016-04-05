@@ -137,3 +137,26 @@ int* Ship::getSize()
     size[1] = ylen;
     return size;
 }
+
+Alien* Ship::getAlien(int xpos, int ypos)
+{
+    for(int i = 0; i < aliens.size(); i++)
+    {
+        int* pos = aliens[i]->getPos();
+        if(pos[0] == xpos && pos[1] == ypos)
+            return aliens[i];
+    }
+}
+
+/* Check if alien exists with supplied coordinates */
+bool Ship::checkPos(int xpos, int ypos)
+{
+    bool exists = false;
+    for(int i = 0; i < aliens.size() && !exists; i++)
+    {
+        int* pos = aliens[i]->getPos();
+        if(pos[0] == xpos && pos[1] == ypos)
+            exists = true;
+    }
+    return exists;
+}

@@ -1,6 +1,7 @@
 #include <QApplication>
 
 #include "ftz.h"
+#include "gui/control.h"
 
 void createCharacter(FTZ*);
 void selectShip(FTZ*);
@@ -19,12 +20,15 @@ int main(int argc, char *argv[])
     /* Spawn player */
     ftz->spawnPlayer();
 
+    /* Create control class */
+    Control ctr;
+
     /* Game Loop */
     bool alive = true;
     while(alive)
     {
-        // TODO
-        // Process user input
+        /* Proccess user input */
+        ctr.handleInput(ftz);
 
         /* Update game state */
         alive = ftz->simTurn();

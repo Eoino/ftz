@@ -51,7 +51,7 @@ public:
     virtual ~Human();
     void defend(int damage);
     void loot(Item *item);
-    void action(char keyDirection);
+    void action(Alien *alien);
 };
 
 class Alien: public Character

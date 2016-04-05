@@ -36,13 +36,13 @@ void Control::handleInput(FTZ *ftz)
             else
             {
                 if(key == 'u')
-                    ypos-- ;
+                    xpos-- ;
                 else if(key == 'd')
-                    ypos++;
-                else if(key == 'r')
                     xpos++;
+                else if(key == 'r')
+                    ypos++;
                 else if(key == 'l')
-                    xpos--;
+                    ypos--;
 
                 if(ftz->getShip()->checkPos(xpos, ypos))
                 {

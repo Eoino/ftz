@@ -109,6 +109,13 @@ void Ship::importMap(string tilemap)
                 items.push_back(armour);
                 tile = 'R';
             }
+            else if(tile == 'B')
+            {
+                /* Spawn mail in this room */
+                Item *item = new Item("Bandage", 10, i, j);
+                items.push_back(item);
+                tile = 'R';
+            }
 
             map[i][j] = new Tile(tile);
         }

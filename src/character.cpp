@@ -11,6 +11,11 @@ Character::Character(string name, int maxHealth, int money, int xpos, int ypos)
     this->health = maxHealth;
 }
 
+Character::~Character()
+{
+
+}
+
 void Character::move(int xpos, int ypos)
 {
     this->xpos = xpos;
@@ -55,6 +60,12 @@ Human::Human(string name, int maxHealth, int money, int xpos, int ypos)
     armour = nullptr;
 }
 
+Human::~Human()
+{
+    delete weapon;
+    delete armour;
+}
+
 void Human::attack(Character *target)
 {
     int damage = weapon->getDamage();
@@ -84,6 +95,11 @@ Alien::Alien(int xpos, int ypos)
     :Character(ALIEN_NAME, ALIEN_HEALTH, ALIEN_MONEY, xpos, ypos)
 {
     this->strength = ALIEN_STRENGTH;
+}
+
+Alien::~Alien()
+{
+
 }
 
 void Alien::attack(Character *target)

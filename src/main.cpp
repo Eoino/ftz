@@ -32,6 +32,9 @@ int main(int argc, char *argv[])
         // Update GUI
     }
 
+    /* Cleanup */
+    delete ftz;
+
     return 0;
 }
 

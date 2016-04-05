@@ -7,7 +7,8 @@ FTZ::FTZ()
 
 FTZ::~FTZ()
 {
-
+    delete player;
+    delete ship;
 }
 
 /* Executed after player turn */

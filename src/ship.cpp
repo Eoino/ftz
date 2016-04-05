@@ -33,8 +33,25 @@ Ship::Ship(string name)
 
 Ship::~Ship()
 {
-    // TODO
-    // Delete tile map
+    for(int i = 0; i < xlen; i++)
+    {
+        for(int j = 0; j < ylen; j++)
+            delete map[i][j];
+        delete [] map[i];
+    }
+    delete [] map;
+
+    while(!aliens.empty())
+    {
+        delete aliens.back();
+        aliens.pop_back();
+    }
+
+    while(!items.empty())
+    {
+        delete items.back();
+        items.pop_back();
+    }
 }
 
 void Ship::importMap(string tilemap)

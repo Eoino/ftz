@@ -13,6 +13,10 @@
 
 using namespace std;
 
+class Character;
+class Human;
+class Alien;
+
 class Character
 {
 private:
@@ -26,6 +30,7 @@ protected:
     int ypos;
 public:
     Character(string name, int maxHealth, int money, int xpos, int ypos);
+    virtual ~Character();
     void move(int xpos, int ypos);
     virtual void defend(int damage) = 0;
     void heal(int heal);
@@ -43,6 +48,7 @@ private:
     void attack(Character *target);
 public:
     Human(string name, int maxHealth, int money, int xpos, int ypos);
+    virtual ~Human();
     void defend(int damage);
     void loot(Item *item);
     void action(char keyDirection);
@@ -55,6 +61,7 @@ private:
     void attack(Character *target);
 public:
     Alien(int xpos, int ypos);
+    virtual ~Alien();
     void defend(int damage);
     void scout(Tile ***map, Human *human);
 };

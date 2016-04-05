@@ -1,3 +1,4 @@
 Armour-Protection-Value
 
 Shirt-1-5
+Mail-5-20

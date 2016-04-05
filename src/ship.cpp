@@ -76,24 +76,40 @@ void Ship::importMap(string tilemap)
             }
             else if(tile == 'S')
             {
-                /* Spawn weapon in this room */
+                /* Spawn sword in this room */
                 Weapon *weapon = new Weapon("Sword", 25, i, j, 15);
+                items.push_back(weapon);
+                tile = 'R';
+            }
+            else if(tile == 'K')
+            {
+                /* Spawn stick in this room */
+                Weapon *weapon = new Weapon("Stick", 5, i, j, 5);
+                items.push_back(weapon);
+                tile = 'R';
+            }
+            else if(tile == 'P')
+            {
+                /* Spawn pike in this room */
+                Weapon *weapon = new Weapon("Pike", 10, i, j, 10);
                 items.push_back(weapon);
                 tile = 'R';
             }
             else if(tile == 'T')
             {
-                /* Spawn armour in this room */
-                Armour *armour = new Armour("Shirt", 5, i, j, 1);
+                /* Spawn shirt in this room */
+                Armour *armour = new Armour("Shirt", 1, i, j, 5);
                 items.push_back(armour);
                 tile = 'R';
             }
             else if(tile == 'M')
             {
-                /* Spawn medkit in this room */
-                // TODO
+                /* Spawn mail in this room */
+                Armour *armour = new Armour("Mail", 20, i, j, 5);
+                items.push_back(armour);
                 tile = 'R';
             }
+
             map[i][j] = new Tile(tile);
         }
 }

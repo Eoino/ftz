@@ -1,3 +1,5 @@
 Weapon-Damage-Value
 
-Sword-15-25
+Sword-20-25
+Stick-5-5
+Pike-10-10

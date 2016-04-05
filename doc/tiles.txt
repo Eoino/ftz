@@ -8,12 +8,12 @@ G:
 H: 
 I: 
 J: 
-K: 
+K: Stick
 L: 
-M: 
+M: Mail
 N: 
 O: 
-P: 
+P: Pike
 Q: 
 R: Room
 S: Sword

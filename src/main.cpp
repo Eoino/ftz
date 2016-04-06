@@ -1,10 +1,14 @@
 #include <QApplication>
+#include <thread>
 
 #include "ftz.h"
 #include "gui/control.h"
 
-void createCharacter(FTZ*);
-void selectShip(FTZ*);
+using std::thread;
+
+inline void createCharacter(FTZ*);
+inline void selectShip(FTZ*);
+void runFTZ(FTZ *ftz);
 
 int main(int argc, char *argv[])
 {
@@ -20,21 +24,11 @@ int main(int argc, char *argv[])
     /* Spawn player */
     ftz->spawnPlayer();
 
-    /* Create control class */
-    Control ctr;
+    thread game(runFTZ, ftz);
 
-    /* Game Loop */
-    bool alive = true;
-    while(alive)
-    {
-        /* Proccess user input */
-        ctr.handleInput(ftz);
+    // GUI
 
-        /* Update game state */
-        alive = ftz->simTurn();
-
-        // Update GUI
-    }
+    game.join();
 
     /* Cleanup */
     delete ftz;
@@ -47,7 +41,7 @@ void createCharacter(FTZ *ftz)
     // TODO
     // Display UI and pass input details to
     // character creation method in ftz
-    // ftz->addPlayer(name);
+    ftz->addPlayer("Eoin");
 }
 
 void selectShip(FTZ *ftz)
@@ -55,5 +49,22 @@ void selectShip(FTZ *ftz)
     // TODO
     // Display UI and pass selected
     // ship to import method in ftz
-    // ftz->addShip(name);
+    ftz->addShip("vortex");
+}
+
+void runFTZ(FTZ *ftz)
+{
+    /* Create control class */
+    Control ctr;
+
+    /* Game Loop */
+    bool alive = true;
+    while(alive)
+    {
+        /* Proccess user input */
+        ctr.handleInput(ftz);
+
+        /* Update game state */
+        alive = ftz->simTurn();
+    }
 }

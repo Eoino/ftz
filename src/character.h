@@ -31,14 +31,36 @@ protected:
 public:
     Character(string name, int maxHealth, int money, int xpos, int ypos);
     ~Character();
-    void move(int xpos, int ypos);
+    inline void move(int xpos, int ypos);
     virtual void defend(int damage) = 0;
     void heal(int heal);
-    string getName();
+    inline string getName();
     int* getPos();
-    int getHealth();
-    void setPos(int xpos, int ypos);
+    inline int getHealth();
+    inline void setPos(int xpos, int ypos);
 };
+
+inline void Character::move(int xpos, int ypos)
+{
+    this->xpos = xpos;
+    this->ypos = ypos;
+}
+
+inline string Character::getName()
+{
+    return name;
+}
+
+inline int Character::getHealth()
+{
+    return health;
+}
+
+inline void Character::setPos(int xpos, int ypos)
+{
+    this->xpos = xpos;
+    this->ypos = ypos;
+}
 
 class Human: public Character
 {

@@ -16,22 +16,11 @@ Character::~Character()
 
 }
 
-void Character::move(int xpos, int ypos)
-{
-    this->xpos = xpos;
-    this->ypos = ypos;
-}
-
 void Character::heal(int heal)
 {
     health += heal;
     if(health > maxHealth)
         health = maxHealth;
-}
-
-string Character::getName()
-{
-    return this->name;
 }
 
 int* Character::getPos()
@@ -40,17 +29,6 @@ int* Character::getPos()
     pos[0] = xpos;
     pos[1] = ypos;
     return pos;
-}
-
-int Character::getHealth()
-{
-    return health;
-}
-
-void Character::setPos(int xpos, int ypos)
-{
-    this->xpos = xpos;
-    this->ypos = ypos;
 }
 
 Human::Human(string name, int maxHealth, int money, int xpos, int ypos)

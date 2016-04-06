@@ -5,6 +5,7 @@ Control::Control()
 
 }
 
+/* Handle user input */
 void Control::handleInput(FTZ *ftz)
 {
     bool wait = true;

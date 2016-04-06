@@ -168,6 +168,7 @@ bool Ship::checkPos(int xpos, int ypos)
     return exists;
 }
 
+/* Get item at specified position */
 Item *Ship::getItem(int xpos, int ypos)
 {
     Item *item = nullptr;

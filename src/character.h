@@ -7,7 +7,7 @@
 #include "tile.h"
 
 #define ALIEN_NAME "Boo"
-#define ALIEN_HEALTH 100
+#define ALIEN_HEALTH 40
 #define ALIEN_MONEY 15
 #define ALIEN_STRENGTH 10
 

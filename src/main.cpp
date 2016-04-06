@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     /* Spawn player */
     ftz->spawnPlayer();
 
+    /* Simulate game on seperate thread */
     thread game(runFTZ, ftz);
 
     // GUI
@@ -36,22 +37,19 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+/* Create character */
 void createCharacter(FTZ *ftz)
 {
-    // TODO
-    // Display UI and pass input details to
-    // character creation method in ftz
     ftz->addPlayer("Eoin");
 }
 
+/* Select ship */
 void selectShip(FTZ *ftz)
 {
-    // TODO
-    // Display UI and pass selected
-    // ship to import method in ftz
     ftz->addShip("vortex");
 }
 
+/* Game thread */
 void runFTZ(FTZ *ftz)
 {
     /* Create control class */

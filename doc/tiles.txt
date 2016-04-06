@@ -1,8 +1,8 @@
 A: Alien
-B: 
-C: Command Room
+B: Bandage
+C: 
 D: 
-E: Engine Room
+E: 
 F: 
 G: 
 H: 

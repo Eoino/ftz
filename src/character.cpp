@@ -16,6 +16,7 @@ Character::~Character()
 
 }
 
+/* Heal character up to max health */
 void Character::heal(int heal)
 {
     health += heal;
@@ -23,6 +24,7 @@ void Character::heal(int heal)
         health = maxHealth;
 }
 
+/* Return characters coordinates */
 int* Character::getPos()
 {
     int *pos = new int[2];
@@ -105,6 +107,7 @@ void Alien::defend(int damage)
     health -= damage;
 }
 
+/* Alien AI */
 void Alien::scout(Tile ***map, Human *human)
 {
     /* Check position in relation to player */

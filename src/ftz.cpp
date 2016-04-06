@@ -56,6 +56,7 @@ void FTZ::addShip(string name)
     this->ship = ship;
 }
 
+/* Spawn player at random location */
 void FTZ::spawnPlayer()
 {
     random_device rd;

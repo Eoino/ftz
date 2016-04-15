@@ -34,10 +34,16 @@ void Control::handleInput(FTZ *ftz)
             if(key == 'a')
             {
                 Item *item = ftz->getShip()->getItem(xpos, ypos);
-                if(item->getName() == "Bandage")
-                    ftz->getHuman()->heal(100);
-                else
-                    ftz->getHuman()->setWeapon((Weapon*)item);
+                if(item != nullptr)
+                {
+                    if(item->getName() == "Bandage")
+                        ftz->getHuman()->heal(100);
+                    else
+                        ftz->getHuman()->setWeapon((Weapon*)item);
+                    //ftz->getShip()->removeItem();
+                }
+//                else
+//                    delete item;
             }
             else
             {

@@ -28,12 +28,26 @@ public:
     Ship(string name);
     ~Ship();
     vector<Alien*> getAliens();
+    vector<Item*> getItems();
     Tile*** getMap();
     int* getSize();
     Alien* getAlien(int xpos, int ypos);
     bool checkPos(int xpos, int ypos);
     Item* getItem(int xpos, int ypos);
     void deleteAlien(int pos);
+    void removeItem(int pos);
+    inline int getXlen();
+    inline int getYlen();
 };
+
+int Ship::getXlen()
+{
+    return xlen;
+}
+
+int Ship::getYlen()
+{
+    return ylen;
+}
 
 #endif // SHIP_H

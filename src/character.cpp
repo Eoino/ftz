@@ -1,8 +1,8 @@
 #include "Character.h"
 
 Character::Character(string name, int maxHealth, int money, int xpos, int ypos)
+    :name(name)
 {
-    this->name = name;
     this->maxHealth = maxHealth;
     this->money = money;
     this->xpos = xpos;
@@ -49,7 +49,7 @@ Human::~Human()
 void Human::attack(Character *target)
 {
     if(weapon ==  nullptr)
-        target->defend(1);
+        target->defend(10);
     else
         target->defend(weapon->getDamage());
 }

@@ -38,6 +38,14 @@ bool Item::checkPos(int xpos, int ypos)
     return false;
 }
 
+int *Item::getPos()
+{
+    int *pos = new int[2];
+    pos[0] = xpos;
+    pos[1] = ypos;
+    return pos;
+}
+
 string Item::getName()
 {
     return name;

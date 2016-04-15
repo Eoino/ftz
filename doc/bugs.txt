@@ -1,4 +1,9 @@
 - Player spawn location does not appear to be fully random, at least during debug in Qt
 - Aliens are able to attack diagonally
 - Aliens may stack on top of each other due to pathfinding not taking into account the position of entitys besides the player
-
+- Player attack function is currently private but is accessed outside of the class. Access is routed through the action function
+- Update ship maps
+- Equipping new weapon or armour just deletes the existing piece instead of dropping it on the ground
+- Only able to equip weapons
+- Items sometimes remain on the ground after looting
+- Character move function is a duplicate of setPos

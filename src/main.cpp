@@ -1,17 +1,27 @@
 #include <QApplication>
 #include <thread>
+#include <windows.h>
 
 #include "ftz.h"
 #include "gui/control.h"
+#include "gui/gui.h"
 
 using std::thread;
+
+#define FTZ_DEBUG
 
 inline void createCharacter(FTZ*);
 inline void selectShip(FTZ*);
 void runFTZ(FTZ *ftz);
+void guiFun(FTZ* ftz,QApplication a);
+
+Gui * gui;
+int cta = 10;
 
 int main(int argc, char *argv[])
 {
+	QApplication a(argc, argv);
+	
     /* Game Object */
     FTZ *ftz = new FTZ();
 
@@ -27,12 +37,25 @@ int main(int argc, char *argv[])
     /* Simulate game on seperate thread */
     thread game(runFTZ, ftz);
 
-    // GUI
+    /* GUI */
+	bool alive = true;
+	gui = new Gui(ftz);
+    gui->refreshGui(ftz);
+    gui->show();
+    a.processEvents();
+	
+	while(alive)
+	{
+		gui->refreshGui(ftz);
+		a.processEvents();
+	}
 
     game.join();
 
     /* Cleanup */
     delete ftz;
+
+    int ctb = ::cta + 1;
 
     return 0;
 }
@@ -40,13 +63,13 @@ int main(int argc, char *argv[])
 /* Create character */
 void createCharacter(FTZ *ftz)
 {
-    ftz->addPlayer("Eoin");
+    ftz->addPlayer("Ed");
 }
 
 /* Select ship */
 void selectShip(FTZ *ftz)
 {
-    ftz->addShip("vortex");
+    ftz->addShip("kestrel");
 }
 
 /* Game thread */
@@ -65,4 +88,14 @@ void runFTZ(FTZ *ftz)
         /* Update game state */
         alive = ftz->simTurn();
     }
+
+    cout << "GAME OVER" << endl;
+
+}
+
+void guiFun(FTZ* ftz,QApplication a)
+{
+    gui = new Gui(ftz);
+    gui->show();
+    a.exec();
 }

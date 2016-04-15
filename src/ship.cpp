@@ -132,6 +132,11 @@ vector<Alien *> Ship::getAliens()
     return aliens;
 }
 
+vector<Item *> Ship::getItems()
+{
+    return items;
+}
+
 Tile ***Ship::getMap()
 {
     return map;
@@ -189,4 +194,10 @@ void Ship::deleteAlien(int pos)
 {
     delete aliens[pos];
     aliens.erase(aliens.begin() + pos);
+}
+
+/* Delete item at specified position in vector */
+void Ship::removeItem(int pos)
+{
+    items.erase(items.begin() + pos);
 }

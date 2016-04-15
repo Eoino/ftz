@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>room.png</file>
+        <file>bg.PNG</file>
+        <file>alien.png</file>
+        <file>human.png</file>
+        <file>package.png</file>
+    </qresource>
+</RCC>

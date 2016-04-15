@@ -15,10 +15,11 @@ private:
 public:
     Item(string name, int value);
     Item(string name, int value, int xpos, int ypos);
-    ~Item();
+    virtual ~Item();
     int getValue();
     void setPos(int xpos, int ypos);
     bool checkPos(int xpos, int ypos);
+    int* getPos();
     string getName();
 };
 
@@ -29,7 +30,7 @@ private:
 public:
     Weapon(string name, int value, int damage);
     Weapon(string name, int value, int xpos, int ypos, int damage);
-    ~Weapon();
+    virtual ~Weapon();
     int getDamage();
 };
 
@@ -40,7 +41,7 @@ private:
 public:
     Armour(string name, int value, int protection);
     Armour(string name, int value, int xpos, int ypos, int protection);
-    ~Armour();
+    virtual ~Armour();
     int getProtection();
 };
 

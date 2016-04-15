@@ -7,7 +7,7 @@
 #include "tile.h"
 
 #define ALIEN_NAME "Boo"
-#define ALIEN_HEALTH 40
+#define ALIEN_HEALTH 30
 #define ALIEN_MONEY 15
 #define ALIEN_STRENGTH 10
 
@@ -20,7 +20,8 @@ class Alien;
 class Character
 {
 private:
-    string name;
+    static int maxID;
+    const string name;
     int maxHealth;
     int money;
     virtual void attack(Character *target) = 0;
@@ -84,6 +85,7 @@ private:
     int strength;
     void attack(Character *target);
 public:
+    static int total;
     Alien(int xpos, int ypos);
     virtual ~Alien();
     void defend(int damage);

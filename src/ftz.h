@@ -6,6 +6,8 @@
 #include "character.h"
 #include "ship.h"
 
+#define FTZ_DEBUG
+
 class FTZ
 {
 private:
@@ -21,5 +23,12 @@ public:
     Human* getHuman();
     Ship* getShip();
 };
+
+template<typename TypeA, typename TypeB>
+/* Print debug information to console */
+void print(TypeA a, TypeB b)
+{
+    cout << a << b << endl;
+}
 
 #endif // FTZ_H

@@ -28,6 +28,9 @@ bool FTZ::simTurn()
         if(aliens[i]->getHealth() <= 0)
         {
             ship->deleteAlien(i);
+#ifdef FTZ_DEBUG
+            print("Deleting alien..\nRemaining: ", aliens.size() - 1);
+#endif
         }
     }
 
@@ -40,6 +43,10 @@ bool FTZ::simTurn()
     /* Check player health */
     if(player->getHealth() <= 0)
         alive = false;
+
+#ifdef FTZ_DEBUG
+    print("Health: ", player->getHealth());
+#endif
 
     return alive;
 }
